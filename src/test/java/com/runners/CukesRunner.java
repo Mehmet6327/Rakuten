@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
         features = "src/test/resources/features",
-        glue = "com/rakuten/stepDefinitions",
+        glue = "com/step_definitions",
         dryRun =false,
         tags = "@wip"
 )
