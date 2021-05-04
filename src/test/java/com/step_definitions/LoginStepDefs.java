@@ -64,6 +64,7 @@ public class LoginStepDefs {
 
     }
 
+
     @Then("the user clicks the action icon to add to wishlist")
     public void the_user_clicks_the_action_icon_to_add_to_wishlist() throws InterruptedException {
         Thread.sleep(2000);

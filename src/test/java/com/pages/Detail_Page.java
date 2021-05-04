@@ -1,5 +1,8 @@
 package com.pages;
 
+import com.utilities.Driver;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -24,35 +27,14 @@ public class Detail_Page extends BasePage {
     public WebElement content;
 
 
+    public void isMovieDisplayedOnDetailPage(String movieName) {
+
+        String axpath = "(//h1[text()='"+movieName+"'])[1]";
+        WebElement element = Driver.get().findElement(By.xpath(axpath));
+        Assert.assertTrue(element.isDisplayed());
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
 }

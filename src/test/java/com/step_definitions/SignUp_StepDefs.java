@@ -44,7 +44,7 @@ public class SignUp_StepDefs {
     @Then("the user should be on the main page with username {string}")
     public void the_user_should_be_on_the_main_page_with_username(String expectedUsername) throws InterruptedException {
 
-        BrowserUtils.waitFor(8);
+        BrowserUtils.waitFor(5);
         String actualUsername = createAccountPage.username_onPage.getText();
         assertEquals(actualUsername,expectedUsername);
 
