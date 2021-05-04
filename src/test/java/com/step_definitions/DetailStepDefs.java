@@ -1,9 +1,7 @@
 package com.step_definitions;
-
 import com.pages.Detail_Page;
 import com.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
-
 public class DetailStepDefs {
 
 

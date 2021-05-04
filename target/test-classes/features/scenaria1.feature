@@ -4,13 +4,22 @@ Feature: Adding a movie to wishList successfully
   Background:
     Given the user navigates to login page
 
-  @signUp
+  @positiveSignUp
   Scenario: SignUp as a new user successfully
     When  the user clicks register button
     And  the user registers successfully with valid credentials
       | email    | antoinejose75@gmail.com |
       | password | antoine27               |
     Then the user should be on the main page with username "antoinejose75"
+
+  @negativeSignUp
+  Scenario: The user cannot signup with invalid credentials
+    When  the user clicks register button
+    And  the user registers successfully with valid credentials
+      | email    | antoinejose75gmail.com |
+      | password | antoine27              |
+    Then the warning message is displayed
+
 
   @login
   Scenario: Login as a registered user successfully
