@@ -12,10 +12,12 @@ import static org.junit.Assert.assertEquals;
 public class SignUp_StepDefs {
 
     CreateAccountPage createAccountPage;
+
     @Given("the user navigates to login page")
     public void the_user_navigates_to_login_page() {
         Driver.get().get(ConfigurationReader.get("url"));
     }
+
     @Then("the user clicks register button")
     public void the_user_clicks_register_button() {
         createAccountPage = new CreateAccountPage();
@@ -25,16 +27,19 @@ public class SignUp_StepDefs {
         BrowserUtils.waitFor(4);
         createAccountPage.register.click();
     }
+
     @Then("the user registers successfully with valid credentials")
     public void the_user_registers_successfully_with_valid_credentials(Map<String, String> userdata) {
         createAccountPage.createAccount(userdata.get("email"), userdata.get("password"));
     }
+
     @Then("the user should be on the main page with username {string}")
     public void the_user_should_be_on_the_main_page_with_username(String expectedUsername) throws InterruptedException {
         BrowserUtils.waitFor(5);
         String actualUsername = createAccountPage.username_onPage.getText();
         assertEquals(actualUsername, expectedUsername);
     }
+
     @Then("the user registers successfully with dummy credentials")
     public void the_user_registers_successfully_with_dummy_credentials() throws InterruptedException {
         Faker faker = new Faker();
@@ -44,10 +49,8 @@ public class SignUp_StepDefs {
         String expecteduRL = "https://www.rakuten.tv/es";
         assertEquals(expecteduRL, currentUrl);
     }
-    @Then("the warning message is displayed")
-    public void the_warning_message_is_displayed() {
-        Assert.assertTrue(createAccountPage.warningText.isDisplayed());
-    }
+
+
 
 
 }
